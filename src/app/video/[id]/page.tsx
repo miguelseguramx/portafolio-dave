@@ -2,14 +2,7 @@ import { notFound } from 'next/navigation';
 import { videos } from '@/data/videos';
 import Wrapper from '@/components/Wrapper';
 
-interface PageProps {
-    params: {
-        id: string;
-    };
-    searchParams: { [key: string]: string | string[] | undefined };
-}
-
-export default async function VideoPage({ params }: PageProps) {
+export default function VideoPage({ params }: any) {
     // Find the video in any category
     const allVideos = [
         ...videos.visuallyAppealing.videos,
