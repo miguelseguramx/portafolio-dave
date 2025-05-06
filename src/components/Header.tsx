@@ -36,7 +36,7 @@ export default function Header() {
                         <span className="block w-8 h-0.5 bg-black transition-all duration-300"></span>
                         <span className="block w-8 h-0.5 bg-black transition-all duration-300"></span>
                     </button>
-                    <div id="mobile-menu" className="mobile-menu fixed left-0 right-0 top-[60px] bg-white shadow-lg p-4">
+                    <div id="mobile-menu" className="mobile-menu fixed left-0 right-0 top-[86px] bg-white shadow-lg p-4">
                         <ul className="flex flex-col gap-4">
                             <li>
                                 <Link 
