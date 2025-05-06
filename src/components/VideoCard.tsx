@@ -9,7 +9,7 @@ interface VideoCardProps {
     orientation: 'vertical' | 'horizontal';
 }
 
-export default function VideoCard({ id, title, url, thumbnail, orientation }: VideoCardProps) {
+export default function VideoCard({ id, title, thumbnail, orientation }: VideoCardProps) {
     return (
         <Link href={`/video/${id}`} className="group">
             <div className={`relative overflow-hidden rounded-lg bg-gray-100 ${

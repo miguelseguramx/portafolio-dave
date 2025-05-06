@@ -15,10 +15,10 @@ export default function Header() {
                     <menu>
                         <ul className="flex gap-8">
                             <li>
-                                <a href="/#videos" className="nav-btn text-2xl">Videos</a>
+                                <Link href="/#videos" className="nav-btn text-2xl">Videos</Link>
                             </li>
                             <li>
-                                <a href="/#contacto" className="nav-btn text-2xl">Contacto</a>
+                                <Link href="/#contacto" className="nav-btn text-2xl">Contacto</Link>
                             </li>
                         </ul>
                     </menu>
@@ -39,24 +39,24 @@ export default function Header() {
                     <div id="mobile-menu" className="mobile-menu fixed left-0 right-0 top-[60px] bg-white shadow-lg p-4">
                         <ul className="flex flex-col gap-4">
                             <li>
-                                <a 
+                                <Link 
                                     href="/#videos" 
                                     className="nav-btn text-2xl block py-2"
                                     onClick={() => {
                                         const mobileMenu = document.getElementById('mobile-menu');
                                         mobileMenu?.classList.remove('open');
                                     }}
-                                >Videos</a>
+                                >Videos</Link>
                             </li>
                             <li>
-                                <a 
+                                <Link 
                                     href="/#contacto" 
                                     className="nav-btn text-2xl block py-2"
                                     onClick={() => {
                                         const mobileMenu = document.getElementById('mobile-menu');
                                         mobileMenu?.classList.remove('open');
                                     }}
-                                >Contacto</a>
+                                >Contacto</Link>
                             </li>
                         </ul>
                     </div>
