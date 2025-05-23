@@ -27,7 +27,7 @@ export const videos: VideoData = {
         id: slugify("HD LABS OPERACIÓN DE CAM & FOCUS PULLER PROMO"),
         title: "HD LABS OPERACIÓN DE CAM & FOCUS PULLER PROMO",
         url: "https://youtube.com/shorts/xbK3UubE2bg",
-        thumbnail: "/miniaturas/focus.png",
+        thumbnail: "/miniaturas/focus.jpeg",
         orientation: "vertical"
       },
       {
