@@ -7,8 +7,9 @@ export default function Header() {
         <div className="bg-white sticky top-0 z-50">
             <header className="max-w-[1200px] mx-auto flex justify-between items-center p-4">
                 <h1>
-                    <Link href="/" className="hover:text-gray-600 transition-colors text-2xl">
-                        <Image src="/logo.png" alt="Day Dreamers Dave" width={180} height={150.4} />
+                    <Link href="/" className="hover:text-gray-600 transition-colors text-2xl flex gap-2">
+                        <Image src="/logo.png" alt="Day Dreamers Dave" width={50} height={50} />
+                        <Image src="/logo-text.svg" alt="Day Dreamers Dave" width={60} height={50} />
                     </Link>
                 </h1>
                 <div className="hidden md:block">
