@@ -1,5 +1,4 @@
 "use client"
-import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -12,7 +11,6 @@ interface VideoCardProps {
 }
 
 export default function VideoCard({
-    id,
     url,
     title,
     thumbnail,
