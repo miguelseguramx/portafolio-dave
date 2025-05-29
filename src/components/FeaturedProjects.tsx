@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import {
   Grid,
@@ -7,6 +8,7 @@ import {
   List,
   Container,
   AspectRatio,
+  useBreakpointValue,
 } from '@chakra-ui/react';
 
 const projects = [
@@ -67,6 +69,9 @@ const projects = [
 ];
 
 function PortfolioGrid() {
+  // Use Chakra's useBreakpointValue hook to get responsive behavior
+  const isDesktop = useBreakpointValue({ base: false, xl: true });
+
   return (
     <Grid templateColumns={{ base: '1fr' }} gap={6} gapY={{ base: 6, lg: 12 }}>
       {projects.map((project, idx) => (
@@ -80,23 +85,22 @@ function PortfolioGrid() {
           borderRadius="lg"
           overflow="hidden"
           p={{ base: 4, lg: 8 }}
-          pb={{ base: 8, lg: 8 }}
         >
-          {/* Video or placeholder */}
-          {!project.reverse && (
+          {/* Video or placeholder - only render on desktop and when NOT reverse */}
+          {isDesktop && !project.reverse && (
             <Container overflow="hidden" borderRadius="lg" p={0}>
-                <AspectRatio ratio={16 / 9} bg="gray.200" display={{ base: 'none', xl: 'block' }}>
+              <AspectRatio ratio={16 / 9} bg="gray.200">
                 <iframe
-                    src={`https://www.youtube.com/embed/${project.youtubeId}`}
-                    title={project.title}
-                    allowFullScreen
+                  src={`https://www.youtube.com/embed/${project.youtubeId}`}
+                  title={project.title}
+                  allowFullScreen
                 />
-                </AspectRatio>
+              </AspectRatio>
             </Container>
           )}
 
           {/* Text content */}
-          <Box p={{ base: 2, lg: 12 }} pt={{ base: 0, lg: 12 }}>
+          <Box p={{ base: 2, lg: 12 }}>
             <Heading size="3xl" mb={2}>
               {project.title}
             </Heading>
@@ -112,23 +116,18 @@ function PortfolioGrid() {
             )}
           </Box>
 
-          {/* Video - shows on mobile always, on desktop only for reverse projects */}
+          {/* Video - render on mobile always, or on desktop when reverse */}
+          {(!isDesktop || project.reverse) && (
             <Container overflow="hidden" borderRadius="lg" p={0}>
-                <AspectRatio 
-                    ratio={16 / 9} 
-                    bg="gray.200" 
-                    display={{ 
-                    base: 'block', 
-                    xl: project.reverse ? 'block' : 'none' 
-                    }}
-                >
-                    <iframe
-                    src={`https://www.youtube.com/embed/${project.youtubeId}`}
-                    title={project.title}
-                    allowFullScreen
-                    />
-                </AspectRatio>
+              <AspectRatio ratio={16 / 9} bg="gray.200">
+                <iframe
+                  src={`https://www.youtube.com/embed/${project.youtubeId}`}
+                  title={project.title}
+                  allowFullScreen
+                />
+              </AspectRatio>
             </Container>
+          )}
         </Grid>
       ))}
     </Grid>

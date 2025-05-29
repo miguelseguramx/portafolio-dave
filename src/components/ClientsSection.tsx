@@ -39,12 +39,12 @@ export default function ClientsGrid() {
     const logoW = useBreakpointValue({ base: 120, md: 160 });
   
     return (
-        <Container maxW="none" bg="gray.100">
+        <Container maxW="none" bg="gray.100" mb={{ base: 24, lg: 48 }}>
             <Container maxW="container.lg" px={4}>
-                <Box py={{ base: 8, md: 16 }} px={{ base: 4, md: 12 }} borderRadius="lg" mb={16}>
+                <Box py={{ base: 8, md: 16 }} px={{ base: 4, md: 12 }} borderRadius="lg">
                     <VStack gap={2} textAlign="center" mb={{ base: 6, md: 12 }}>
-                    <Heading size="4xl" fontWeight="bold">He trabajado con</Heading>
-                    <Text color="gray.600" fontSize="2xl">
+                    <Heading size="5xl" fontWeight="bold">He trabajado con</Heading>
+                    <Text color="gray.600" fontSize="3xl">
                         Estas son algunas de las empresas que han confiado en mi trabajo como
                         videógrafo.
                     </Text>

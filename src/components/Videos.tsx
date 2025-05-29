@@ -9,7 +9,7 @@ function Videos() {
                 {/* <Heading as="h2" size="2xl" fontWeight="medium" mb={8}>Videos</Heading> */}
                 
                 {/* Visually Appealing Videos */}
-                <Heading as="h2" size="4xl" textAlign="center" fontWeight="bold" mb={12}>
+                <Heading as="h2" size="5xl" textAlign="center" fontWeight="bold" mb={12}>
                     Otros proyectos
                 </Heading>
                 <Box mb={16}>
