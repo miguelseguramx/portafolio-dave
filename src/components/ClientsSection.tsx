@@ -1,19 +1,16 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import { 
   Box, 
   Flex, 
   Heading, 
-  HStack, 
-  IconButton, 
   Text, 
   useBreakpointValue,
   VStack,
   Container
 } from "@chakra-ui/react";
 import Image from "next/image";
-import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
 // Lista de clientes y rutas a sus logos en public/logos
 const clients = [

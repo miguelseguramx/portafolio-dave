@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Box, Flex, Button, HStack, VStack, useDisclosure, IconButton, Container } from "@chakra-ui/react";
-import { HamburgerIcon } from "@chakra-ui/icons";
+import { Box, Flex, HStack, useDisclosure, Container } from "@chakra-ui/react";
 
 export default function Header() {
   const { open, onToggle, onClose } = useDisclosure();
@@ -46,7 +45,7 @@ export default function Header() {
         </Flex>
 
         {/* Mobile Menu */}
-        {open && (
+        {/* {open && (
           <Box
             id="mobile-menu"
             position="fixed"
@@ -82,7 +81,7 @@ export default function Header() {
               </Link>
             </VStack>
           </Box>
-        )}
+        )} */}
       </Container>
     </Box>
   );
