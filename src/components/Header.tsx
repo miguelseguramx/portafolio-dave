@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Box, Flex, HStack, useDisclosure, Container } from "@chakra-ui/react";
+import { Box, Flex, HStack, Container } from "@chakra-ui/react";
 
 export default function Header() {
-  const { open, onToggle, onClose } = useDisclosure();
+//   const { open, onToggle, onClose } = useDisclosure();
 
   return (
     <Box bg="white" position="sticky" top={0} zIndex={50} shadow="md">
