@@ -40,8 +40,8 @@ export default function ClientsGrid() {
             <Container maxW="container.lg" px={4}>
                 <Box py={{ base: 8, md: 16 }} px={{ base: 4, md: 12 }} borderRadius="lg">
                     <VStack gap={2} textAlign="center" mb={{ base: 6, md: 12 }}>
-                    <Heading size="5xl" fontWeight="bold">He trabajado con</Heading>
-                    <Text color="gray.600" fontSize="3xl">
+                    <Heading size={{ base: '3xl', lg: '5xl' }} fontWeight="bold">He trabajado con</Heading>
+                    <Text color="gray.600" fontSize={{ base: 'xl', lg: '3xl' }}>
                         Estas son algunas de las empresas que han confiado en mi trabajo como
                         videógrafo.
                     </Text>
