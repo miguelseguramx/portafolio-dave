@@ -1,68 +1,89 @@
 "use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { Box, Flex, Button, HStack, VStack, useDisclosure, IconButton, Container } from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
 
 export default function Header() {
-    return (
-        <div className="bg-white sticky top-0 z-50">
-            <header className="max-w-[1200px] mx-auto flex justify-between items-center p-4">
-                <h1>
-                    <Link href="/" className="hover:text-gray-600 transition-colors text-2xl flex gap-2">
-                        <Image src="/logo.png" alt="Day Dreamers Dave" width={50} height={50} />
-                        <Image src="/logo-text.svg" alt="Day Dreamers Dave" width={60} height={50} />
-                    </Link>
-                </h1>
-                <div className="hidden md:block">
-                    <menu>
-                        <ul className="flex gap-8">
-                            <li>
-                                <Link href="/#videos" className="nav-btn text-2xl">Videos</Link>
-                            </li>
-                            <li>
-                                <Link href="/#contacto" className="nav-btn text-2xl">Contacto</Link>
-                            </li>
-                        </ul>
-                    </menu>
-                </div>
-                <div className="md:hidden">
-                    <button 
-                        className="flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none"
-                        onClick={() => {
-                            const mobileMenu = document.getElementById('mobile-menu');
-                            mobileMenu?.classList.toggle('open');
-                        }}
-                        aria-label="Toggle menu"
-                    >
-                        <span className="block w-8 h-0.5 bg-black transition-all duration-300"></span>
-                        <span className="block w-8 h-0.5 bg-black transition-all duration-300"></span>
-                        <span className="block w-8 h-0.5 bg-black transition-all duration-300"></span>
-                    </button>
-                    <div id="mobile-menu" className="mobile-menu fixed left-0 right-0 top-[86px] bg-white shadow-lg p-4">
-                        <ul className="flex flex-col gap-4">
-                            <li>
-                                <Link 
-                                    href="/#videos" 
-                                    className="nav-btn text-2xl block py-2"
-                                    onClick={() => {
-                                        const mobileMenu = document.getElementById('mobile-menu');
-                                        mobileMenu?.classList.remove('open');
-                                    }}
-                                >Videos</Link>
-                            </li>
-                            <li>
-                                <Link 
-                                    href="/#contacto" 
-                                    className="nav-btn text-2xl block py-2"
-                                    onClick={() => {
-                                        const mobileMenu = document.getElementById('mobile-menu');
-                                        mobileMenu?.classList.remove('open');
-                                    }}
-                                >Contacto</Link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </header>
-        </div>
-    );
+  const { open, onToggle, onClose } = useDisclosure();
+
+  return (
+    <Box bg="white" position="sticky" top={0} zIndex={50} shadow="md">
+      <Container maxW="container.lg" px={4}>
+        <Flex as="header" justify="space-between" align="center" p={4}>
+          <Link href="/" passHref>
+            <HStack as="div" _hover={{ color: "gray.600" }} transition="color 0.3s" gap={2}>
+              <Image src="/logo.png" alt="Day Dreamers Dave" width={50} height={50} />
+              <Image src="/logo-text.svg" alt="Day Dreamers Dave" width={60} height={50} />
+            </HStack>
+          </Link>
+
+          {/* Desktop Menu */}
+          {/* <HStack as="nav" gap={4} display={{ base: "none", md: "flex" }}>
+            <Link href="/#reels" passHref>
+              <Button as="a" variant="surface">Videos</Button>
+            </Link>
+            <Link href="/#contacto" passHref>
+              <Button as="a" variant="surface">Contacto</Button>
+            </Link>
+            <Link href="/#contacto" passHref>
+              <Button as="a" variant="surface">Contacto</Button>
+            </Link>
+          </HStack> */}
+
+          {/* Mobile Menu Toggle */}
+          {/* <Box display={{ base: "block", md: "none" }}>
+            <IconButton
+              variant="ghost"
+              aria-label="Toggle menu"
+              onClick={onToggle}
+              size="md"
+            >
+                <HamburgerIcon />
+            </IconButton>
+          </Box> */}
+        </Flex>
+
+        {/* Mobile Menu */}
+        {open && (
+          <Box
+            id="mobile-menu"
+            position="fixed"
+            top="86px"
+            left={0}
+            right={0}
+            bg="white"
+            shadow="lg"
+            p={4}
+            zIndex={40}
+            display={{ md: "none" }}
+          >
+            <VStack gap={4} align="stretch">
+              <Link href="/#videos" passHref>
+                <Box
+                  as="a"
+                  fontSize="2xl"
+                  py={2}
+                  onClick={onClose}
+                >
+                  Videos
+                </Box>
+              </Link>
+              <Link href="/#contacto" passHref>
+                <Box
+                  as="a"
+                  fontSize="2xl"
+                  py={2}
+                  onClick={onClose}
+                >
+                  Contacto
+                </Box>
+              </Link>
+            </VStack>
+          </Box>
+        )}
+      </Container>
+    </Box>
+  );
 }

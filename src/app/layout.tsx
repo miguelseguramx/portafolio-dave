@@ -4,6 +4,8 @@ import "./titles.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Header from "@/components/Header";
 import Footer from '@/components/Footer';
+import { Provider } from '@/components/ui/provider';
+import { Container } from "@chakra-ui/react";
 
 export const metadata: Metadata = {
   title: "Day Dreamers Dave",
@@ -18,9 +20,13 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="min-h-screen">
-        <Header />
-        {children}
-        <Footer />
+        <Provider>
+          <Header />
+          <Container maxW="none" bg="bg.subtle" p={0}>
+            {children}
+          </Container>
+          <Footer />
+        </Provider>
       </body>
     </html>
   );

@@ -1,44 +1,52 @@
-import Wrapper from "./Wrapper";
+import { Box, Container, Heading, SimpleGrid } from "@chakra-ui/react";
 import VideoCard from "./VideoCard";
 import { videos } from '@/data/videos';
 
 function Videos() {
     return (
-        <section id="videos" className="section">
-            <Wrapper>
-                {/* <h2 className="text-4xl font-medium mb-8">Videos</h2> */}
+        <Box as="section" id="videos" className="section">
+            <Container maxW="container.lg" px={4}>
+                {/* <Heading as="h2" size="2xl" fontWeight="medium" mb={8}>Videos</Heading> */}
                 
                 {/* Visually Appealing Videos */}
-                <div className="mb-16">
-                    <h3 className="text-2xl font-medium mb-6">{videos.visuallyAppealing.title}</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <Heading as="h2" size="4xl" textAlign="center" fontWeight="bold" mb={12}>
+                    Otros proyectos
+                </Heading>
+                <Box mb={16}>
+                    <Heading as="h3" size="3xl"  fontWeight="bold" mb={6}>
+                        {videos.visuallyAppealing.title}
+                    </Heading>
+                    <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>
                         {videos.visuallyAppealing.videos.map((video) => (
                             <VideoCard key={video.id} {...video} />
                         ))}
-                    </div>
-                </div>
+                    </SimpleGrid>
+                </Box>
 
                 {/* Animations */}
-                <div className="mb-16">
-                    <h3 className="text-2xl font-medium mb-6">{videos.animations.title}</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <Box mb={16}>
+                    <Heading as="h3" size="3xl" fontWeight="bold" mb={6}>
+                        {videos.animations.title}
+                    </Heading>
+                    <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>
                         {videos.animations.videos.map((video) => (
                             <VideoCard key={video.id} {...video} />
                         ))}
-                    </div>
-                </div>
+                    </SimpleGrid>
+                </Box>
 
-                {/* Story Videos */}
-                <div className="mb-16">
-                    <h3 className="text-2xl font-medium mb-6">{videos.storyVideos.title}</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <Box mb={16}>
+                    <Heading as="h3" size="3xl" fontWeight="bold" mb={6}>
+                        {videos.storyVideos.title}
+                    </Heading>
+                    <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>
                         {videos.storyVideos.videos.map((video) => (
                             <VideoCard key={video.id} {...video} />
                         ))}
-                    </div>
-                </div>
-            </Wrapper>
-        </section>
+                    </SimpleGrid>
+                </Box>
+            </Container>
+        </Box>
     );
 }
 
