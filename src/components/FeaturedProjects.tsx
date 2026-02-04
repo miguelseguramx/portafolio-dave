@@ -139,7 +139,7 @@ function FeaturedProjects() {
         <Box as="section" id="videos" className="section" pt={{ base: 24, lg: 48 }} pb={{ base: 24, lg: 48 }}>
             <Container maxW="container.lg" px={4}>
                 <Heading as="h2" size={{ base: '4xl', lg: '6xl' }} textAlign="center" fontWeight="bold" mb={{ base: 6, lg: 20 }}>
-                    Projectos
+                    Proyectos
                 </Heading>
                 <PortfolioGrid />
             </Container>
