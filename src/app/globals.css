@@ -12,3 +12,14 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading), Georgia, serif;
 }
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation-play-state: paused !important;
+  }
+}
