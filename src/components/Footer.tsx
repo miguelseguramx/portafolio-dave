@@ -1,5 +1,5 @@
 'use client';
-import { Box, Container, Flex, Link as ChakraLink, Text, createIcon } from '@chakra-ui/react';
+import { Box, Container, Flex, Link as ChakraLink, Text, VStack, createIcon } from '@chakra-ui/react';
 
 const InstagramIcon = createIcon({
   displayName: 'InstagramIcon',
@@ -31,42 +31,68 @@ const Footer = () => {
   return (
     <Box as="footer" bg="gray.900" color="white" py={8}>
       <Container maxW="container.lg" px={4}>
-        <Flex
-          direction={{ base: 'column', md: 'row' }}
-          justify="center"
-          align="center"
-          gap={6}
-        >
-          <ChakraLink
-            href="https://instagram.com/day_dreamer_dave"
-            target="_blank"
-            rel="noopener noreferrer"
-            display="flex"
-            alignItems="center"
-            gap={2}
-            color="white"
-            _hover={{ color: 'pink.400' }}
-            transition="color 0.3s"
+        <VStack gap={6}>
+          <Flex
+            direction={{ base: 'column', md: 'row' }}
+            justify="center"
+            align="center"
+            gap={6}
           >
-            <InstagramIcon boxSize={6} />
-            <Text>@day_dreamer_dave</Text>
-          </ChakraLink>
+            <ChakraLink
+              href="https://instagram.com/day_dreamer_dave"
+              target="_blank"
+              rel="noopener noreferrer"
+              display="flex"
+              alignItems="center"
+              gap={2}
+              color="white"
+              _hover={{ color: 'pink.400' }}
+              transition="color 0.3s"
+            >
+              <InstagramIcon boxSize={6} />
+              <Text>@day_dreamer_dave</Text>
+            </ChakraLink>
 
-          <ChakraLink
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://wa.me/525537022741"
-            display="flex"
-            alignItems="center"
-            gap={2}
-            color="white"
-            _hover={{ color: 'green.400' }}
-            transition="color 0.3s"
-          >
-            <WhatsAppIcon boxSize={6} />
-            <Text>WhatsApp</Text>
-          </ChakraLink>
-        </Flex>
+            <ChakraLink
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://wa.me/525537022741"
+              display="flex"
+              alignItems="center"
+              gap={2}
+              color="white"
+              _hover={{ color: 'green.400' }}
+              transition="color 0.3s"
+            >
+              <WhatsAppIcon boxSize={6} />
+              <Text>WhatsApp</Text>
+            </ChakraLink>
+          </Flex>
+
+          <Box w="full" borderTop="1px solid" borderColor="whiteAlpha.200" pt={4}>
+            <Flex
+              direction={{ base: 'column', md: 'row' }}
+              justify="space-between"
+              align="center"
+              gap={3}
+            >
+              <Text fontSize="xs" color="whiteAlpha.500">
+                © 2025 Day Dreamer Dave. Todos los derechos reservados.
+              </Text>
+              <ChakraLink
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                fontSize="xs"
+                color="whiteAlpha.500"
+                _hover={{ color: 'white' }}
+                transition="color 0.2s"
+                cursor="pointer"
+                letterSpacing="0.05em"
+              >
+                Volver arriba ↑
+              </ChakraLink>
+            </Flex>
+          </Box>
+        </VStack>
       </Container>
     </Box>
   );

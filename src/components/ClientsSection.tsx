@@ -1,12 +1,11 @@
 "use client";
 
 import React from "react";
-import { 
-  Box, 
-  Flex, 
-  Heading, 
-  Text, 
-  useBreakpointValue,
+import {
+  Box,
+  Flex,
+  Heading,
+  Text,
   VStack,
   Container
 } from "@chakra-ui/react";
@@ -32,37 +31,33 @@ const clients = [
 ];
 
 export default function ClientsGrid() {
-    // Ajusta el tamaño de los logos según el breakpoint
-    const logoW = useBreakpointValue({ base: 120, md: 160 });
-  
     return (
-        <Container maxW="none" bg="gray.100" mb={{ base: 24, lg: 48 }}>
+        <Container maxW="none" bg="#f5f5f5" mb={{ base: 16, lg: 24 }}>
             <Container maxW="container.lg" px={4}>
                 <Box py={{ base: 8, md: 16 }} px={{ base: 4, md: 12 }} borderRadius="lg">
                     <VStack gap={2} textAlign="center" mb={{ base: 6, md: 12 }}>
-                    <Heading size={{ base: '3xl', lg: '5xl' }} fontWeight="bold">He trabajado con</Heading>
+                    <Heading size={{ base: '3xl', lg: '5xl' }} fontWeight="300" fontFamily="var(--font-heading)" letterSpacing="-0.02em">He trabajado con</Heading>
                     <Text color="gray.600" fontSize={{ base: 'xl', lg: '3xl' }}>
                         Estas son algunas de las empresas que han confiado en mi trabajo como
                         videógrafo.
                     </Text>
                     </VStack>
-            
+
                     <Flex
                         wrap="wrap"
                         justify="center"
                         align="center"
-                        /* gap entre logos */
                         gapX={{ base: 8, md: 12 }}
-                        gapY={{ base: 0, md: 0 }}
+                        gapY={{ base: 4, md: 6 }}
                     >
                     {clients.map((c) => (
-                        <Box key={c.name} w={`${logoW}px`} h={`${logoW}px`} display="flex" justifyContent="center" alignItems="center">
+                        <Box key={c.name} px={4} py={2} display="flex" justifyContent="center" alignItems="center" h="48px">
                             <Image
                                 src={c.logo}
                                 alt={c.name}
-                                width={logoW}
-                                height={logoW}
-                                objectFit="contain"
+                                width={160}
+                                height={48}
+                                style={{ objectFit: "contain", maxHeight: "48px", filter: "grayscale(100%)", opacity: 0.65 }}
                             />
                         </Box>
                     ))}
