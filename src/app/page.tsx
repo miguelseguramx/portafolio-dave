@@ -1,17 +1,19 @@
 import ClientsSection from "@/components/ClientsSection";
+import Contact from "@/components/Contact";
 import FeaturedProjects from "@/components/FeaturedProjects";
+import Hero from "@/components/Hero";
+import Skills from "@/components/Skills";
 import Videos from "@/components/Videos";
 
 export default function Home() {
   return (
     <>
-      <div className="px-4 py-8">
-        <FeaturedProjects />
-        <ClientsSection />
-        <Videos />
-        
-        {/* <Contact /> */}
-      </div>
+      <Hero />
+      <Skills />
+      <FeaturedProjects />
+      <ClientsSection />
+      <Videos />
+      <Contact />
     </>
   );
 }

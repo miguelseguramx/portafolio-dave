@@ -6,7 +6,7 @@
 .display-4,
 .display-5,
 .display-6 {
-  font-family: var(--font-outfit), sans-serif;
+  font-family: var(--font-heading), Georgia, serif;
 }
 
 .display-1 {
