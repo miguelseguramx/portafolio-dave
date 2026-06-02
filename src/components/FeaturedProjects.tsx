@@ -36,7 +36,7 @@ const projects: Project[] = [
     ],
     youtubeId: '5CCLJGKvLFw',
     thumbnail: '/miniaturas/drama.png',
-    role: 'Director de Fotografía',
+    role: 'Asistente de Cámara',
   },
   {
     title: 'Un Año Más',
@@ -54,7 +54,7 @@ const projects: Project[] = [
     ],
     youtubeId: 'DEB5EIv6oAU',
     thumbnail: '/miniaturas/ecos.png',
-    role: 'Director de Fotografía',
+    role: 'Director y Director de Fotografía',
   },
   {
     title: 'AVIÓN A TOKIO',
